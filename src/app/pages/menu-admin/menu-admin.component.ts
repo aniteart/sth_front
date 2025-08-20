@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router'
+import { RouterOutlet, Router } from '@angular/router'
 import { PoMenuItem, PoMenuModule, PoPageModule, PoToolbarModule } from '@po-ui/ng-components';
 
 
@@ -17,11 +17,17 @@ import { PoMenuItem, PoMenuModule, PoPageModule, PoToolbarModule } from '@po-ui/
   styleUrl: './menu-admin.component.scss'
 })
 export class MenuAdminComponent {
+  
+    constructor(private router: Router) {}
+
     readonly menus: Array<PoMenuItem> = [
-    { label: 'Home', action: this.onClick.bind(this) },
+    { label: 'Home', action: () => this.navigateHome() },
+    { label: 'Funcionários', link: '/employees' },
+    { label: 'Departamentos', link: '/departments' },
+    { label: 'Cargos', link: '/positions' }
   ];
 
-  private onClick() {
-    alert('Clique em um ítem do Menu');
+  private navigateHome() {
+    this.router.navigate(['/']);
   }
 }
