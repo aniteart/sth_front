@@ -1,26 +1,25 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { MenuAdminComponent } from './menu-admin/menu-admin.component'
+import { ApplicationConfig, NgModule } from '@angular/core';
+import { provideRouter, RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component'
+import { EmployeesComponent } from './employees/employees.component'
 
 
 export const routes: Routes = [
   {
-    path: 'Funcionários',
-    component: MenuAdminComponent,
-    children: [
-      {
-       // path: 'funcionarios', loadChildren: () => import('./employees/employees.module').then(m => m.FuncionarioModule) // ex. em teste
-      }
-    ]
+    path: 'home',
+    component: HomeComponent,
+    title: 'Home'
   },
-
-]
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-
-export class AppRoutingModule {}
+  {
+    path: 'employees',
+    component: EmployeesComponent,
+    title: 'Funcionários'
+  },
+  // {
+  //   path: 'employees/new',
+  //   component: EmployeesFormComponent,
+  //   title: 'Funcionários'
+  // }
+];
 
 
