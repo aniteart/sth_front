@@ -1,0 +1,44 @@
+<po-page-default p-title="Funcionários">
+
+<po-modal #modal p-title="Funcionário">
+    <po-dynamic-form
+      [p-fields]="fields"
+      [p-value]="formData">
+    </po-dynamic-form>
+
+    <po-upload
+      name="Imagem"
+      p-label="Anexe sua foto"
+      p-url="https://po-sample-api.onrender.com/v1/uploads/addFile"
+      (p-success)="onUploadSuccess($event)"
+      (p-error)="onUploadError($event)">
+    </po-upload>
+
+    <po-modal-footer [p-disabled-align]="false">
+      <po-button p-danger="true" p-label="Fechar" (p-click)="closeModal()"> </po-button>
+      <po-button *ngIf="isEditing" p-label="Deletar" (p-click)="deleteFromEdit()"> </po-button>
+      <po-button p-kind="primary" [p-label]="isEditing ? 'Salvar Edição' : 'Cadastrar'" (p-click)="confirm()"> </po-button>
+    </po-modal-footer>
+
+  </po-modal>
+
+  <div class="flex-row gap-md mb-md">
+  <po-search
+    name="Po Search"
+    [p-items]="list">
+  </po-search>
+
+  <po-button p-label="Cadastrar Funcionário" (p-click)="openModal()"> </po-button>
+</div>
+
+
+  <po-table
+    [p-columns]="columns"
+    [p-items]="list"
+    [p-sort]="true"
+    [p-striped]="true"
+    p-spacing="large"
+  >
+  </po-table>
+</po-page-default>
+

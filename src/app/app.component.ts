@@ -1,20 +1,31 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { PoMenuModule, PoMenuItem } from '@po-ui/ng-components';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
+import { PoMenuItem, PoMenuModule, PoPageModule, PoToolbarModule } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PoMenuModule, CommonModule],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    PoToolbarModule,
+    PoMenuModule,
+    PoPageModule
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title(title: any) {
-    throw new Error('Method not implemented.');
-  }
-  readonly menus: PoMenuItem[] = [
-    { label: 'Departamentos', link: '/departments' }
+  readonly menus: Array<PoMenuItem> = [
+    { label: 'Home', action: () => this.navigate('home') },
+    { label: 'Funcionários', action: () => this.navigate('employees') },
+    { label: 'Departamentos', action: () => this.navigate('departments') },
   ];
+
+  constructor(private router: Router) {}
+
+  navigate(route: string) {
+    this.router.navigate([`/${route}`]);
+  }
 }

@@ -3,9 +3,8 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 // 1. Importe o provideAnimations
 import { provideAnimations } from '@angular/platform-browser/animations';
-
-import { routes } from './app.routes';
 import { PoHttpRequestModule } from '@po-ui/ng-components';
+import { routes } from './pages/app-routing.module';
 
 export const appConfig: ApplicationConfig = {
   providers: [
