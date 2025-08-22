@@ -107,10 +107,6 @@ export class EmployeesComponent {
       {
         label: 'Editar',
         action: (item: Employees) => this.edit(item)
-      },
-      {
-        label: 'Deletar',
-        action: (item: Employees) => this.remove(item)
       }
     ];
   }

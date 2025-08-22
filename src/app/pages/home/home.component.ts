@@ -14,20 +14,9 @@ import { PoMenuItem, PoMenuModule, PoPageModule, PoToolbarModule, PoImageModule 
     PoToolbarModule,
     PoImageModule,
     PoMenuModule,
-    PoPageModule,
-    RouterOutlet,
+    PoPageModule
   ],
 })
 export class HomeComponent {
 
-    constructor(private router: Router) {}
-
-    readonly menus: Array<PoMenuItem> = [
-    { label: 'Home', action: () => this.navigateTo('home') },
-    { label: 'Funcionários', action: () => this.navigateTo('employees') }
-  ];
-
-    private navigateTo(path: string) {
-      this.router.navigate([`/${path}`]);
-  }
 }

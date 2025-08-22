@@ -10,6 +10,7 @@ export interface Employees {
   birthdate: string;
   position: string;
   department: string;
+  imageUrl?: string;
 }
 
 @Injectable({
