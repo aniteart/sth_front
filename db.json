@@ -1,4 +1,24 @@
 {
+  "departments": [
+    {
+      "id": "2",
+      "name": "Tecnologia",
+      "code": 102,
+      "city": "Rio de Janeiro"
+    },
+    {
+      "id": "3",
+      "name": "Financeiro",
+      "code": 103,
+      "city": "Curitiba"
+    },
+    {
+      "id": "9519",
+      "name": "Arquitetura",
+      "code": 1231,
+      "city": "São Paulo"
+    }
+  ],
   "employees": [
     {
       "id": "3",

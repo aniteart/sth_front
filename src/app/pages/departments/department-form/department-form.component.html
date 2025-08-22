@@ -1,0 +1,13 @@
+<po-page-edit
+  [p-title]="pageTitle"
+  (p-save)="save()"
+  (p-cancel)="cancel()"
+  [p-disable-submit]="!dynamicForm.form.valid">
+
+  <po-dynamic-form
+    #dynamicForm
+    [p-fields]="fields"
+    [p-value]="department">
+  </po-dynamic-form>
+
+</po-page-edit>

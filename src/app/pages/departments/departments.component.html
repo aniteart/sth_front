@@ -1,0 +1,60 @@
+<po-page-default p-title="Gerenciar Departamentos" [p-actions]="pageActions">
+
+  <po-table
+    *ngIf="departments && departments.length > 0"
+    [p-columns]="columns"
+    [p-items]="departments"
+    [p-actions]="actions"
+    [p-selectable]="true"
+    (p-selected)="onRowSelected($event)"
+    (p-unselected)="onRowUnselected($event)"
+    (p-all-selected)="onAllRowsSelected()"
+    (p-all-unselected)="onAllRowsUnselected()">
+
+    <ng-template p-table-cell-template let-column="column" let-row="row">
+          <div *ngIf="column.property === 'city'">
+
+            {{ row.city || '-'}}
+
+          </div>
+        </ng-template>
+
+  </po-table>
+
+</po-page-default>
+
+<po-modal #poModal [p-title]="modalTitle">
+  <form [formGroup]="departmentForm">
+    <po-input
+      formControlName="name"
+      p-label="Nome"
+      p-placeholder="Nome do Departamento"
+      [p-required]="'true'">
+    </po-input>
+    <po-number
+      formControlName="code"
+      p-label="Código"
+      p-placeholder="Código do Departamento"
+      [p-required]="'true'">
+    </po-number>
+    <po-input
+      formControlName="city"
+      p-label="Cidade"
+      p-placeholder="Cidade do Departamento">
+    </po-input>
+  </form>
+
+  <po-modal-footer>
+    <po-button
+      p-label="Cancelar"
+      p-kind="secondary"
+      (p-click)="onCancel()">
+    </po-button>
+    <po-button
+      p-label="Salvar"
+      p-kind="primary"
+      [p-disabled]="departmentForm.invalid"
+      (p-click)="onSave()">
+    </po-button>
+  </po-modal-footer>
+</po-modal>

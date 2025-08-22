@@ -14,12 +14,13 @@ import { PoMenuItem, PoMenuModule, PoPageModule, PoToolbarModule } from '@po-ui/
     PoPageModule
   ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   readonly menus: Array<PoMenuItem> = [
     { label: 'Home', action: () => this.navigate('home') },
     { label: 'Funcionários', action: () => this.navigate('employees') },
+    { label: 'Departamentos', action: () => this.navigate('departments') },
   ];
 
   constructor(private router: Router) {}
