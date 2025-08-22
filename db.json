@@ -1,0 +1,28 @@
+{
+  "employees": [
+    {
+      "id": "3",
+      "name": "Roser Dalmau",
+      "email": "roser@ui.com",
+      "birthdate": "1929-06-03",
+      "position": "Pianista",
+      "department": "PNM-Chile"
+    },
+    {
+      "id": "4616",
+      "name": "Lucas Pais Lima",
+      "email": "lucas@io.com",
+      "birthdate": "1996-03-12",
+      "position": "RA",
+      "department": "Call Center"
+    },
+    {
+      "id": "36d9",
+      "name": "Gabriela Martins",
+      "email": "gabs@io.com",
+      "birthdate": "1990-08-15",
+      "position": "Assistente",
+      "department": "Marketing"
+    }
+  ]
+}
